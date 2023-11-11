@@ -1,0 +1,29 @@
+version: '3.3'
+services:
+  trino:
+    container_name: trino
+    image: trinodb/trino:429
+    deploy:
+      resources:
+        limits:
+#          cpus: '0.50'
+          memory: 22g
+    ports:
+      - '8080:8080'
+    networks:
+      - trino-network
+    volumes:
+      - ./etc/trino/:/etc/trino
+  postgres:
+    container_name: postgres
+    image: postgres
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+    ports:
+      - '5432:5432'
+    networks:
+      - trino-network
+networks:
+  trino-network:
+    driver: bridge
