@@ -5,7 +5,7 @@ This repository contains the code for solutions that extract Declare patterns fr
 * Match_Recognize: an sql operator implemented on Trino (using a postgres db). The script for evaluating this system is located in `match-recognize/trino_implementation.py`
 * RuM: a desktop application. We utilize the jar (version 0.7.2) from `https://rulemining.org/`
 * SIESTA-bpm: our approach, which is an implementation of business process mining on top of a scalable system named SIESTA.
-The code prof the preprocessing component is the same that the authors of SIESTA used and can be found in ```https://github.com/mavroudo/SequenceDetectionPreprocess/tree/2.2.0```. Our new version of the query processor is available at https://anonymous.4open.science/r/SequenceDetectionQueryExecutor-046B.
+The code prof the preprocessing component is the same that the authors of SIESTA used and can be found in ```https://github.com/mavroudo/SequenceDetectionPreprocess/tree/2.2.0```. Our new version of the query processor is available at ```https://anonymous.4open.science/r/SequenceDetectionQueryExecutor-046B'''.
 
 
 For the Neo4j and Match_Recognize we also provide the docker compose which is responsible to
