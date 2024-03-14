@@ -20,14 +20,14 @@ print("--------------------------------------")
 
 # Frequent Itemsets -> are they concecutive?
 start = time.time()
-d4py.compute_frequent_itemsets(min_support=0.8, len_itemset=2)
+d4py.compute_frequent_itemsets(min_support=0.5, len_itemset=2)
 print(f"Frequent itemsets found: {len(d4py.frequent_item_sets)}")
 print(time.time() - start)
 
 # discover declare
 start = time.time()
 discovery_results = d4py.discovery(consider_vacuity=False, max_declare_cardinality=2)
-print(d4py.filter_discovery(min_support=0.8))
+print(d4py.filter_discovery(min_support=0.9))
 print(time.time() - start)
 
 print(f"Total time: {time.time() - s_start} seconds")
