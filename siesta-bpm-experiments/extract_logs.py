@@ -9,12 +9,14 @@ Created on Tue Mar 12 08:02:53 2024
 import pandas as pd
 import pm4py
 import sys
+import random
 
 def append_df(original_df, appending_df, event_num):
-    previous_ids = [int(i) for i in original_df['case:concept:name']]
-    min_new_id = max(previous_ids) + 1
+    previous_ids = [i for i in original_df['case:concept:name']]
+    # min_new_id = max(previous_ids) + 1
+    x=random.sample("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",4)
     to_append_ids = appending_df['case:concept:name'].unique()
-    map_ids = {tid: str(min_new_id + index) for index, tid in enumerate(to_append_ids)}
+    map_ids = {tid: str(tid) + x for index, tid in enumerate(to_append_ids)}
     appending_df['case:concept:name'] = appending_df['case:concept:name'].map(map_ids)
     concated_df = pd.concat([original_df, appending_df], ignore_index=True)
     if concated_df.shape[0] > event_num:
