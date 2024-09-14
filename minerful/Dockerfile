@@ -13,7 +13,7 @@ RUN mkdir /app
 RUN mkdir /app/input
 
 # Change the given memory to 50GB
-RUN sed -i 's/MEMORY_MAX="8096m"/MEMORY_MAX="6g"/g' run-MINERful.sh
+RUN sed -i 's/MEMORY_MAX="8096m"/MEMORY_MAX="50g"/g' run-MINERful.sh
 
 
 ENTRYPOINT ["time","./run-MINERful.sh"]
