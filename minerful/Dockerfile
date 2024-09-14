@@ -19,4 +19,4 @@ RUN sed -i 's/MEMORY_MAX="8096m"/MEMORY_MAX="50g"/g' run-MINERful.sh
 ENTRYPOINT ["time","./run-MINERful.sh"]
 CMD ["-s","0","-c","0","-iLF","/app/input/log.xes","-prune","none"]
 # docker build -t minerful .
-# docker run --rm --mount type=bind,source=/home/balaktsis/experiments/,target=/app/input minerful
+# docker run --rm -it --mount type=bind,source=/home/balaktsis/experiments/,target=/app/input minerful
